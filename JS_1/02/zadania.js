@@ -1,24 +1,24 @@
 // Zadanie 1
-var ex1 = (5 == 8);                   //Wynik przykładu 1
-var ex2 = (12 == -1);                 //Wynik przykładu 2
-var ex3 = (2 !== 2);                  //Wynik przykładu 3
-var ex4 = (999 == 0.234);             //Wynik przykładu 4
+var ex1 = (5 != 8);                   //Wynik przykładu 1
+var ex2 = (12 != -1);                 //Wynik przykładu 2
+var ex3 = (2 == 2);                  //Wynik przykładu 3
+var ex4 = (999 != 0.234);             //Wynik przykładu 4
 
 //zadanie 2
-var ex5 = (5 !== 8);                  //Wynik przykładu 1
+var ex5 = (5 === "8");                  //Wynik przykładu 1
 var ex6 = (12 !== -1);                //Wynik przykładu 2
 var ex7 = (2 !== 2.01);               //Wynik przykładu 3
 var ex8 = (999 !== 0.234);            //Wynik przykładu 4
 
 // Zadanie 3
-var ex9 = ((3 == 4) && (1 == 7));        //Wynik przykładu 1
-var ex10 = ((12 == 5) || (6 == -4));      //Wynik przykładu 2
-var ex11 = !(12 !== 5);             //Wynik przykładu 3
+var ex9 = ((3 != 4) && (1 <= 7));        //Wynik przykładu 1
+var ex10 = ((12 == 5) || (6 != -4));      //Wynik przykładu 2
+var ex11 = !(12 == 5);             //Wynik przykładu 3
 
 // Zadanie 4
-var ex12 = ((2 <= 8) && (1 == 1));        //Wynik przykładu 1
-var ex13 = ((0 == 3) || !(13 == -2));   //Wynik przykładu 2
-var ex14 = !(!(12 !== 5));          //Wynik przykładu 3
+var ex12 = ((2 == 8) && (1 == 1));        //Wynik przykładu 1
+var ex13 = ((0 == 3) || !(13 != -2));   //Wynik przykładu 2
+var ex14 = !(!(12 == 5));          //Wynik przykładu 3
 
 
 
