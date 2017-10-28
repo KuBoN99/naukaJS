@@ -1,0 +1,162 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript, zadanie 5</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https:://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  
+  <body>
+    <header class="container">
+      <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo">
+    </header>
+    <section class="section-subheader">
+      <div class="container sub-container">
+        <h1>JavaScript &ndash; tablice</h1>
+      </div>
+    </section>
+    <section class="container container-margin">
+      <h2>Wykład</h2>
+      <p class="text">
+        Do przechowywania wielu zmiennych w JavaScript służą tablice. Mamy następujące trzy zmienne:
+      </p>
+      <pre><code class="js">
+      var fruit1 = "ananas";
+      var fruit2 = "brzoskwinia";
+      var fruit3 = "arbuz";
+          </code></pre>
+      <p class="text">
+       ...równie dobrze możemy je umieścić do tablicy:
+      </p>
+      <pre><code class="js">
+      var fruitsArray = ["ananas", "brzoskwinia", "arbuz"];
+        </code></pre>
+      <p class="text">
+        Do elementów tablicy dostajemy się poprzez podanie indeksu (pozycji). Ananas znajdzie się na pozycji o indeksie 0, a więc aby się do niego dostać, to korzystamy ze składni:
+      </p>
+      <pre><code class="js">
+      fruitsArray[0]; //indeks podajemy w nawiasach kwadratowych
+        </code></pre>
+      <p class="text">
+        Siłą JavaScriptowych tablic są ich wbudowane metody. Jedna z nich <code><b>.length</b></code> była już wcześniej wspomniana.
+      </p>
+      <p class="text">Oto lista najczęściej używanych metod tablicowych:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tablica</th>
+            <th>Metoda</th>
+            <th>Działanie</th>
+            <th>Co zwraca</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[a,b,c,d]</td>
+            <td><code><b>.length</b></code></td>
+            <td>Zwraca długość tablicy</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>[1,15,22,-1]</td>
+            <td><code><b>.sort()</b></code></td>
+            <td>Zwraca posortowaną tablicę</td>
+            <td>[-1, 1, 15, 22]</td>
+          </tr>
+          <tr>
+            <td>["ananas", "brzoskwinia", "arbuz"]</td>
+            <td><code><b>.push("kokos")</b></code></td>
+            <td>Dodaje na koniec tablicy nową wartość</td>
+            <td>["ananas", "brzoskwinia", "arbuz", "kokos"]</td>
+          </tr>
+          <tr>
+            <td>["ananas", "brzoskwinia", "arbuz"]</td>
+            <td><code><b>.pop()</b></code></td>
+            <td>Usuwa ostatni element tablicy</td>
+            <td>["ananas", "brzoskwinia"]</td>
+          </tr>
+          <tr>
+            <td>["ananas", "brzoskwinia", "arbuz"]</td>
+            <td><code><b>.shift()</b></code></td>
+            <td>Usuwa pierwszy element tablicy</td>
+            <td>["brzoskwinia", "arbuz"]</td>
+          </tr>
+          <tr>
+            <td>["ananas", "brzoskwinia", "arbuz"]</td>
+            <td><code><b>.unshift("kokos")</b></code></td>
+            <td>Dodaje jako pierwszy element tablicy</td>
+            <td>["kokos", "ananas", "brzoskwinia", "arbuz"]</td>
+          </tr>
+          <tr>
+            <td>["ananas", "brzoskwinia", "arbuz"]</td>
+            <td><code><b>.reverse()</b></code></td>
+            <td>Odwraca kolejność elementów tablicy</td>
+            <td>["arbuz", "brzoskwinia", "ananas"]</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="container-last">
+      <div class="container">
+        <p class="text"><strong>Po każdej zmianie w kodzie JS wciśnij przycisk "run" u góry strony, aby zobaczyć efekt.</strong></p>
+        <h2>Zadanie 1</h2>
+        <p class="text">
+          Spójrz na kod do zadania 1 w pliku JavaScript. W linii 2 spróbuj do zadeklarowanej zmiennej przypisać tablicę z ulubionymi serialami, tak by wyświetliła się poniżej.
+        </p>
+        <p class="text" id="ex1">Moje ulubione seriale to:&nbsp;</p>
+        <p class="text"><strong>Hint:&nbsp;</strong>Pamiętaj, że tablica musi znajdować się w nawiasach kwadratowych, a jej wartości oddzielane są przecinkami.</p>
+        <h2>Zadanie 2</h2>
+        <p class="text">
+          W pliku JavaScriptowym do zadania 2 znajdziesz tablicę z latami oraz dwoma zmiennymi pomocniczymi. Zadeklaruj te zmienne, skorzystaj z odpowiednich elementów tablicy (nie wpisuj wartości liczbowych ręcznie), tak aby pod spodem prawidłowo wyświetlał się zakres wiekowy, w którym jesteś.
+        </p>
+        <p class="text" id="ex2">Mam pomiędzy&nbsp;</p>
+        <p class="text"><strong>Hint:&nbsp;</strong>Konkretne wartości tablicy można przypisać do zmiennej w ten sposób.</p>
+        <pre><code class="js">
+      var index = 9;
+      var zmienna = tablica[index];
+      // albo
+      var zmienna2 = tablica[4];
+          </code></pre>
+        <h2>Zadanie 3</h2>
+        <p class="text">
+        </p>
+        <p class="text" id="ex3">Długość tablicy to:&nbsp;</p>
+        <p class="text">
+          <strong>Hint:&nbsp;</strong> Metod tablicowych używa się przez podanie nazwy tablicy i po kropce nazwy metody oraz, jeżeli wymaga tego metoda, podania wartości w nawiasach.
+        </p>
+        <pre><code class="js">
+      var someNumbers = [5,2,9]; 
+      someNumbers.sort();         //teraz pod zmienną someNumbers znajduje się tablica [2,5,9]
+          </code></pre>
+        <h3>Zadanie 4</h3>
+        <p class="text">W pliku JS w miejscu na zadanie 4 znajdziesz tablicę z warzywami oraz drugą zmienną, która jest wyświetlana poniżej. <strong>Użyj odpowiednich metod, aby dodać na początku i na końcu, jakieś nowe warzywo.</strong></p>
+        <p class="text" id="ex4">W moim koszyku leży:&nbsp;</p>
+        <p class="text">
+          <strong>Hint:&nbsp;</strong> Jeżeli nie wiesz, jakich metod użyć, wróć do tabeli z metodami tablicowymi.
+        </p>
+        <h2>Zadanie 5</h2>
+        <p class="text">
+          Nic nie stoi na przeszkodzie, aby do tablicy wstawić inne tablice. Nazywa się to tablicami wielowymiarowymi a wyglądają tak:
+        </p>
+        <pre><code class="js">
+      var array = [5, "xyz", [33,29,"abc"], true];</code></pre>
+        <p class="text">
+          Aby dostać się do wartości wewnątrz wewnętrznej tablicy należy najpierw podać indeks, na którym znajduje się sama tablica, a potem indeks wartości wewnątrz. Aby dostać się do wartości 29 należy użyć takiej konstrukcji:
+        </p>
+        <pre><code class="js">
+      array[2][1];</code></pre>
+        <p class="text">
+          Najpierw wybieramy nazwę tablicy, następnie indeks, na którym znajduje się tablica wewnętrzna ([2]), a na koniec indeks interesującej nas wartości wewnątrz drugiej tablicy ([3])
+        </p>
+        <p class="text">
+          <strong>Spójrz na kod do zadania 5 w pliku JS. Znajduję się tam wielowymiarowa tablica z markami i modelami samochodów, spróbuj przypisać do zmiennej poniżej wartość "Juke". Tak by wyświetlała się poprawnie.</strong>
+        </p>
+        <p class="text" id="ex5">Pod zmienną nestedIndex znajduje się:&nbsp;</p>
+        <p class="text">
+          Czy wiesz o co chodzi? Spróbuj wewnątrz tablicy z modelami samochodów zagnieździć jeszcze jedną tablicę (np. z datą produkcji) tak, aby zyskały kolejny wymiar. Następnie zmodyfikuj zmienną tak, żeby wyświetlała którąś z wpisanych przez Ciebie wartość.<br>
+          <strong>Hint: </strong>wartość zmiennej będzie wtedy wyglądać mniej więcej tak: <code><b>array[x][y][z]</b></code>
+        </p>
+      </div>
+    </section>
+    <script src="zadania.js"></script>
+  </body>
