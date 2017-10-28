@@ -1,0 +1,143 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript, zadanie 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  
+  <body>
+    <header class="container">
+      <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo">
+    </header>
+    <section class="section-subheader">
+      <div class="container sub-container">
+        <h1>JavaScript &ndash; operatory</h1>
+      </div>
+    </section>
+
+    <section class="container container-margin">
+      <h2>Teoria</h2>
+      <p class="text">
+        Język JavaScript potrafi wykonywać działania matematyczne. Do ich wykonywania służą operatory logiczne i operatory porównania.<br> Są to: <br>
+      </p>
+      <table>
+        <tr>
+          <th>Znak</th>
+          <th>Opis</th>
+          <th>Przykład</th>
+          <th>Zwracana wartość</th>
+        </tr>
+        <tr>
+          <td>==</td>
+          <td>znak równości</td>
+          <td>2 == 4</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td>znak nierówności</td>
+          <td>2 != 4</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>&gt;</td>
+          <td>większe niż</td>
+          <td>2 &gt; 4</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>&lt;</td>
+          <td>mniejsze niż</td>
+          <td>2 &lt; 4</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>&gt;=</td>
+          <td>większe lub równe</td>
+          <td>2 &gt;= 4</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>&lt;=</td>
+          <td>mniejsze lub równe</td>
+          <td>4 &lt;= 4</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>&amp;&amp;</td>
+          <td>i</td>
+          <td>((2 &lt; 10) &amp;&amp; (3 &gt; 1))</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>lub</td>
+          <td>((5 == 5) || (3 == 5))</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>!</td>
+          <td>zaprzeczenie</td>
+          <td>!(5 == 3)</td>
+          <td>true</td>
+        </tr>
+      </table>
+      <p class="text">
+        <b>Ponadto możesz również korzystać ze standardowych operatorów matematycznych takich jak: +, -, *, /. </b>
+      </p>
+      <p class="text">
+        W JavaScripcie istnieje operator reszty z dzielenia (modulo). Jest on niezwykle przydatny, gdy chcemy sprawdzić, czy dany element jest parzysty. Operator ten przyjmuje znak procenta (%).
+        <pre><code class="js">
+      9 % 2;       //zwróci 1, bo 9/2 to 4, a 1 to reszta
+            </code></pre>
+      </p>
+    </section>
+    <section class="container-last">
+      <div class="container">
+        <p class="text"><strong>Po każdej zmianie w kodzie JS wciśnij przycisk Run u góry strony, aby zobaczyć efekt.</strong></p>
+        <h2>Zadanie 1</h2>
+        <p class="text">W kodzie JavaScript znajdziesz kilka zmiennych zawierających wynik porównań liczb, czyli wartości logiczne (booleany) znane Ci z poprzedniej lekcji. W celu zwiększenia czytelności operacje porównań znajdują się w nawiasach. Podmień znaki równości na odpowiednie operatory tak, aby wyniki poniżej w każdym przypadku zwracały&nbsp;<code><b>true</b></code>.</p>
+        <p class="text no-margin" id="ex1">Wynik przykładu 1:&nbsp;</p>
+        <p class="text no-margin" id="ex2">Wynik przykładu 2:&nbsp;</p>
+        <p class="text no-margin" id="ex3">Wynik przykładu 3:&nbsp;</p>
+        <p class="text" id="ex4">Wynik przykładu 4:&nbsp;</p>
+        <p class="text">
+          <strong>Hint:&nbsp;</strong>
+          <pre><code class="js">
+      var exN = (5 <= 8);    //zwraca true, bo 5 jest mniejsze lub równe 8
+      var exN = (5 >= 8);    //zwraca false, bo 5 nie jest większe lub równe 8
+              </code></pre>
+        </p>
+        <h2>Zadanie 2</h2>
+        <p class="text">To zadanie jest analogiczne do poprzedniego. Podmień pomiędzy liczbami w zmiennych znaki nierówności na odpowiednie operatory tak, aby wyniki poniżej w każdym przypadku zwracały&nbsp;<code><b>false</b></code>.</p>
+        <p class="text no-margin" id="ex5">Wynik przykładu 1:&nbsp;</p>
+        <p class="text no-margin" id="ex6">Wynik przykładu 2:&nbsp;</p>
+        <p class="text no-margin" id="ex7">Wynik przykładu 3:&nbsp;</p>
+        <p class="text" id="ex8">Wynik przykładu 4:&nbsp;</p>
+        <h2>Zadanie 3</h2>
+        <p class="text">Zaczyna się robić trudniej, wprowadzamy operatory logiczne. Omówmy przykład znajdujący się poniżej:</p>
+          <pre><code class="js">
+      var exN = (5 <= 8) && (1 > 3);    
+          </code></pre>
+          <p class="text"> Wartość w zmiennej <code>exN</code> będzie miała wartość <code>false</code>. Dlaczego? Ponieważ komputer wykona następujące czynności:</p>
+          <ul>
+            <li>Najpierw obliczy wynik równania <code>(5 &lt;= 8)</code>. Dostanie wartość <code>true</code>. Wartość ta zostanie na chwilę zapamiętana.</li>
+            <li>Następnie obliczy wynik równania <code>(1 > 3)</code>. Znowu dostanie wartość <code>false</code>. Wartość ta zostanie na chwilę zapamiętana.</li>
+            <li>Na końcu obliczy wynik równania <code>true && false</code> (wartości logiczne zostały zapamiętane w poprzednich krokach). Wynikiem będzie <code><b>false</b></code>, która to wartość zostanie zapisana do zmiennej.</li>
+          </ul>
+        </p>
+        <p class="text">
+          Przejdźmy do zadania. W kodzie JavaScript podmień znaki równości lub nierówności na odpowiednie operatory tak, aby wyniki poniżej w każdym przypadku zwracały&nbsp;<code><b>true</b></code>. Nie zamieniaj operatorów logicznych!</p>
+        <p class="text no-margin" id="ex9">Wynik przykładu 1:&nbsp;</p>
+        <p class="text no-margin" id="ex10">Wynik przykładu 2:&nbsp;</p>
+        <p class="text" id="ex11">Wynik przykładu 3:&nbsp;</p>
+        <h2>Zadanie 4</h2>
+        <p class="text">To zadanie jest analogiczne do poprzedniego. W kodzie JavaScript podmień operatory na odpowiednie tak, aby wyniki poniżej w każdym przypadku zwracały&nbsp;<code><b>false</b></code>.</p>
+        <p class="text no-margin" id="ex12">Wynik przykładu 1:&nbsp;</p>
+        <p class="text no-margin" id="ex13">Wynik przykładu 2:&nbsp;</p>
+        <p class="text" id="ex14">Wynik przykładu 3:&nbsp;</p>
+      </div>
+    </section>
+    <script src="zadania.js"></script>
+  </body>
