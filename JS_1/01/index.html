@@ -1,0 +1,151 @@
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript, zadanie 1</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https:://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+  <header class="container">
+    <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo">
+  </header>
+  <section class="section-subheader">
+    <div class="container sub-container">
+      <h1>JavaScript &ndash; typy zmiennych</h1>
+    </div>
+  </section>
+  <section class="container container-margin">
+    <h2>O zmiennych</h2>
+    <p class="text">
+      Podstawową jednostką przechowywania danych w JavaScript jest zmienna. Zapisuje się ją poprzez podanie słowa kluczowego
+      <code><b>var </b></code> (<strong>var</strong>iable) oraz nazwy. Następnie po znaku "równa się" (operator przypisania) podaje się wartość, jaką chce się tam zapisać. Oto przykład:
+    </p>
+    <pre><code class="js">var number1 = 5;</code></pre>
+    <pre><code class="js">var number2 = 2;</code></pre>
+    <pre><code class="js">var number3 = number1 + number2;</code></pre>
+    <p class="text no-margin">W tym przykładzie: </p>
+    <ul>
+      <li>zmienna o nazwie <b>number1</b> przechowuje wartość 5,</li>
+      <li>zmienna o nazwie <b>number2</b> przechowuje wartość 2,</li>
+      <li>zmienna o nazwie <b>number3</b> przechowuje wartość 7 (<b>number1</b> + <b>number2</b> czyli 5 + 2).</li>
+    </ul>
+    <p class="text">
+      Zmienna przechowuje wartość. Prościej mówiąc &ndash; ma wartość, którą w prosty sposób możemy zmienić:
+      <pre><code class="js">
+    var apple = "jabłko"; // teraz zmienna apple przechowuje napis "jabłko"
+    
+    apple = "ananas"; // teraz zmienna apple przechowuje napis "ananas"
+          </code></pre>
+    </p>
+    <p class="text">
+      Zmienną możesz wyobrazić sobie jako pudełko. Czyli z użyciem <code><b>var</b></code> tworzymy je, a po znaku równości mówimy, co do niego chcemy włożyć. Jeśli ma w nim być nowa rzecz, to nie tworzymy go na nowo. Po prostu wskazujemy je i deklarujemy, co tym razem wkładamy.
+    </p>
+    <p class="text no-margin">
+      Należy pamiętać, że nazwa każdej zmiennej powinna być unikalna. Może to być skrócona nazwa (x czy y) lub &ndash; co jest zgodne z dobrą praktyką &ndash; bardziej opisowa (name, city, age).
+    </p>
+    <h3>Krótko o nazywaniu zmiennych</h3>
+    <ul>
+      <li>mogą zawierać litery, cyfry, podkreślenia i znak dolara,</li>
+      <li>powinny zaczynać się od litery,</li>
+      <li>mogą rozpoczynać się od <b>$</b> lub <b>_</b>,</li>
+      <li>rozróżniają duże i małe litery (<b>a</b> i <b>A</b> to dwie różne zmienne),</li>
+      <li>jeżeli po zadeklarowaniu zmiennej nie przypiszemy do niej żadnej wartości, to wtedy przyjmie ona wartość <b>undefined.</b>
+      </li>
+    </ul>
+    <p class="text">
+      W JavaScripcie znak "=" jest operatorem przypisania, co znaczy, że nie używamy go jak normalnego znaku równości. Jeżeli chcesz porównać dwie zmienne i dzięki temu dowiedzieć się, czy są takie same, to użyj "==" czyli podwójnego znaku równości.
+    </p>
+    <p class="text no-margin">
+      Zmienne mogą przechowywać różnego rodzaju dane.  Najważniejsze z nich to:
+    </p>
+    <p class="text">
+      number &ndash; czyli wszystkie liczby. np.
+      <pre><code class='js'>
+    // zmienna numberOfChild przechowuje liczbę dzieci w klasie
+    var numberOfChild = 12;
+          </code></pre>
+    </p>
+    <p class="text">
+      string &ndash; czyli napisy. np.
+      <pre><code class="js">
+    // zmienna name przechowuje napis z imieniem
+    var name = "Bożydar";
+          </code></pre>
+    </p>
+    <p class="text">
+      boolean &ndash; czyli wartości logiczne. Mogą przyjąć dwie wartości: prawda (true) lub fałsz (false).
+      <pre><code class="js">
+    // zmienna loggedIn przechowuje informację, czy jestem zalogowany (true = tak, false = nie)
+    var loggedIn = true;
+          </code></pre>
+    </p>
+    <p class="text">Pamiętaj, że zmienne typu string (napisy) zawsze powinny znajdować się w cudzysłowie. Przyjrzyj się poniższych różnicom:</p>
+<ul>
+  <li><b>22</b> &ndash; zmienna typu number (liczba),</li>
+  <li><b>"22"</b> &ndash; zmienna typu string (napis),</li>
+  <li><b>true</b> &ndash; zmienna typu boolean (logiczna),</li>
+  <li><b>"true"</b> &ndash; zmienna typu string (napis).</li>
+</ul>
+
+  </section>
+  <section class="container-last">
+    <div class="container">
+      <p class="text"><strong>Po każdej zmianie w kodzie JS wciśnij przycisk Run u góry strony, aby zobaczyć efekt.</strong></p>
+      <h2>Zadanie 1</h2>
+      <p class="text">
+        Spójrz na zadanie 1 (zakładka JS). Kod, który znajdziesz pod komentarzem, odpowiada za wyświetlanie podanej zmiennej na stronie. Nie zajmuj się wyrażeniem <code><b>document.getElementById('ex1').innerText</b></code>, jest ono po to, żeby
+        zmienna była widoczna zaraz po napisie "Wynik zadania 1:". <br>Przyjrzyj się zmiennej po znaku "+=" oraz deklaracji zmiennej linię wyżej. Czy potrafisz powiedzieć, dlaczego napis pod spodem się nie wyświetla? <strong>Popraw kod tak, aby wszystko działało poprawnie.</strong>
+      </p>
+      <p class="text" id="ex1">Wynik zadania 1:&nbsp;</p>
+      <p class="text"><strong>Hint:</strong> Jeżeli utknąłeś, przeczytaj punkty o nazwach zmiennych, przyjrzyj się kodowi z zadania 1, porównaj obie linie.</p>
+
+      <h2>Zadanie 2</h2>
+      <p class="text">
+        Tak jak powiedzieliśmy wcześniej, zmienne deklarujemy za pomocą słowa kluczowego "var", po którym następuje nazwa, a następnie po operatorze przypisania (znak <code>=</code>) jej wartość. Jeżeli wartość jest w cudzysłowie, to znajduje się w niej tekst (string).<br>
+        W kodzie do zadania 2 znajdziesz zmienną o nazwie <code><b>favouriteLanguage</b></code>. Przypisz do niej napis (string) ze swoim ulubionym językiem programowania (np. JavaScript). Jeżeli wszystko jest dobrze, to wyświetli się on poniżej.
+      </p>
+      <p class="text" id="ex2">Zaczynam uczyć się mojego pierwszego języka programowania. Jest to:&nbsp;</p>
+      <h2>Zadanie 3</h2>
+      <p class="text">
+        W zmiennych możemy również przechowywać liczby, na których możemy potem wykonywać operacje arytmetyczne (+, -, *, /). W kodzie do zadania 3 znajdziesz zmienną o nazwie <b>result</b>, która dodaje zmienne <b>number1</b> i <b>number2</b>, jest wyświetlana poniżej za znakiem równości. Nadaj zmiennym <b>number1</b> i <b>number2</b> takie wartość liczbowe, żeby wynik równania pod spodem był prawidłowy</strong>.
+      </p>
+      <p class="text"><span id="ex3"></span></p>
+      <p class="text"><strong>Hint:</strong> Jeżeli liczby nie dodają się prawidłowo, "sklejają" się z sobą, to znaczy, że są niepotrzebnie otoczone cudzysłowem. W takim przypadku komputer traktuje je jako <strong>napis</strong> a nie liczbę.</p>
+      <h2>Zadanie 4</h2>
+      <p class="text">
+        W kodzie JavaScript do zadania 4 znajduje się kolejny typ zmiennych boolean (flaga), przyjmuje on tylko dwie wartości: <code>true</code> albo <code>false</code> (prawda lub fałsz). Zazwyczaj zmienne tego typu używane są do sterowania naszym programem, mówienia mu, czy ma coś
+        zrobić czy nie.
+        <strong>Uzupełnij zmienne tak, żeby program wiedział, jaka jest pogoda.</strong> Jeżeli wszystko uzupełnisz wartościami <b>true</b> lub <b>false</b>, to na dole pokaże się informacja, jak powinienneś się przygotować przed wyjściem z domu.
+      </p>
+      <p class="text" id="ex4"></p>
+      <p class="text">
+        <strong>Hint:</strong> Pamiętaj, że w cudzysłowy wkładamy tylko napisy (stringi). Wartości logiczne pozostawiamy bez takich znaków.
+      </p>
+      <h2>Zadanie 5</h2>
+      <p class="text">
+        Kolejnym typem zmiennych są tablice. W uproszczeniu można powiedzieć, że są to zbiory innych zmiennych (string, number, boolean itd.). Tworzy się je tak samo jak inne zmienne, z tym że po znaku równości piszemy nawias kwadratowy, w który wstawiamy wartości oddzielone przecinkiem. Do zmiennych w tablicy można dostać się przez podanie nazwy tablicy oraz numeru indeksu, w którym znajduje się interesująca nas wartość.
+        <br>
+        <strong>Pamiętaj, że tablice numeruje się według standardu amerykańskiego, czyli od zera a nie od jednego.</strong>
+        <p>
+          <p class="text">Tak wygląda przykładowa tablica:</p>
+          <pre><code class="js">
+  var array = ["ananas", 5, "mirabela"];
+            </code></pre>
+          <p class="text">W indeksie 0 znajduje się ciąg znaków "ananas", w indeksie 1 &ndash; liczba 5, a w indeksie 2 &ndash; "mirabela".</p>
+          <p class="text">W kodzie JS do zadania 5. znajdziesz tablicę. Wypełnij ją zgodnie z następującymi wymaganiami:
+            <ul>
+              <li>lista powinna mieć dokładnie pięć elementów,</li>
+              <li>W indeksie 0. powinna się znajdować liczba (np. Twoja ulubiona),</li>                       <li>w indeksie 1. powinien znajdować się napis (np. Twoje imię),</li>
+              <li>w indeksie 2. powinna znajdować się wartość logiczna,</li>
+              <li>w indeksie 3. powinien znajdować się dowolny napis,</li>
+              <li>w indeksie 4. powinna znajdować się liczba.</li>
+            </ul>
+          </p>
+          <p class="text" id="ex5"></p>
+          <p class="text">To jeszcze nie wszystko, czego możesz dowiedzieć się o tablicach. Bardziej zaawansowane zagadnienia poznasz później.</p>
+    </div>
+  </section>
+  <script src="zadania.js"></script>
+</body>
