@@ -1,0 +1,130 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript, zadanie 7</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <header class="container">
+        <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo">
+    </header>
+    <section class="section-subheader">
+        <div class="container sub-container">
+            <h1>JavaScript &ndash; interwały i opóźnienia</h1>
+        </div>
+    </section>
+    <section class="container container-margin">
+      <h2>Wykład</h2>
+      <p class="text">
+        Porozmawiamy o czymś nie tylko jeszcze przyjemniejszym, lecz także mającym nieco większy wizualny efekt niż wcześniejsze zagadnienia. 
+        Poznaj dwie następujące metody:<br>
+      </p>
+        <ul>
+          <li>timeout</li>
+          <li>interval</li>
+        </ul>
+        <br>
+        <p class="text">Timeout to opóźnienie, dany blok kodu wykona się po upływie wskazanego czasu &ndash; czyli uruchom raz np. za pięć sekund.<br>
+        Interval to wymuszenie cyklicznego powtarzania się bloku kodu &ndash; czyli uruchamiaj wiele razy np. co pięć sekund.</p> 
+     
+      <p class="text">
+        Obie metody wywołuje się tak samo:
+      <pre><code class="js">
+    setTimeout(function() {
+      //kod do wykonania
+    }, tuWpiszCzasOpóźnienia);
+    
+    setInterval(function() {
+      //kod do wykonania
+    }, tuWpiszCzasInterwału);
+      </code></pre>
+         </p> 
+      <p class="text">
+        Przeanalizujmy kod po kolei:
+      <ul>
+        <li>najpierw wywołujemy metodę,</li>
+        <li>następnie w nawiasach piszemy funkcję,</li>
+        <li>na końcu podajemy czas w milisekundach (1000 milisekund to 1 sekunda).</li>
+      </ul>
+   
+      <p class="text">
+        Analogicznymi metodami do powyższych są <b>clearInterval</b> i <b>clearTimeout</b>, które wyłączają wcześniejsze ustawienia. Przy tych metodach w nawiasach musimy podać, który <b>interval</b>, <b>timeout</b> chcemy wyłączyć, bo może ich być kilka.
+      </p>
+      <p class="text">
+        W tym celu metody <b>setInterval</b> i <b>setTimeout</b> zazwyczaj przypisuje się do zmiennych. Wygląda to tak:
+        <pre><code class="js">
+    var demoInterval = setTimeout(function(){
+      // Do some stuff
+    }, 5000) 
+        </code></pre>
+      </p>
+      <p class="text">
+        I wtedy, gdy chcemy go wyłączyć robimy coś takiego:
+        <pre><code class="js">
+    clearInterval(demoInterval);
+        </code></pre>
+      </p>
+    </section>
+    <section class="container-last">
+      <div class="container">
+        <p class="text"><strong>Po każdej zmianie w kodzie JS wciśnij przycisk Run u góry strony, aby zobaczyć efekt.</strong></p>
+        <h2>Zadanie 1</h2>
+        <p class="text">
+          Pod spodem masz tekst, na którym ustawiony jest trzysekundowy interwał, zmień go na sekundowy.
+        </p>
+        <p class="text" id='ex1'>Odliczam:&nbsp;</p>
+        <p class="text"><strong>Hint:&nbsp;</strong>W razie problemów wróć do przykładowego użycia tej metody i spójrz, w którym miejscu ustalany jest czas.</p>
+        <h2>Zadanie 2</h2>
+        <p class="text">
+          W kodzie znajduje się interwał. Wewnątrz niego znajdziesz warunek <code><b>if</b></code> zatrzymujący tę metodę, gdy wyświetlana liczba jest większa niż <b>10</b>. Przypisz interval z tego zadania do zmiennej o dowolnej nazwie, a następnie zatrzymaj jego działanie wewnątrz <b>if</b>.
+        </p>
+        <p class="text" id="ex2">Odliczam:&nbsp;</p>
+        <p class="text"><strong>Hint:&nbsp;</strong>W kodzie do tego zadania znajdziesz komentarze ze wskazówkami, które linie należy zmienić lub dopisać.</p>
+        <h2>Zadanie 3</h2>
+        <p class="text">
+          Spójrz na animację poniżej, jest ona w całości wykonana przy pomocy <b>setInterval</b>. Przyjrzyj się również kodowi JavaScript do tego zadania. Znajdziesz tam następujące elementy kodu:
+        </p>  
+          <ul>
+            <li>tablicę z kolejnymi slajdami animacji,</li>
+            <li>zmienną liczącą, na którym slajdzie aktualnie jestem,</li>
+            <li>interwał wyświetlający element tablicy o indeksie w zmiennej.</li>
+          </ul>
+        <p class="text" id="demo">&nbsp;</p>
+        <p class="text">
+          Pod spodem znajdziesz instrukcję krok po kroku, jak napisać tego typu animację. Spróbuj ją prześledzić, a następnie postępuj zgodnie z poleceniami i napisz własną animację, która wyświetli się pod spodem.
+        </p>
+        <p class="text" id="ex3"></p>
+        <p class="text">
+          <strong>Hint:&nbsp;</strong>Jeżeli masz problem z którymś z punktów, to spójrz, jak zbudowana jest animacja podglądowa i porównaj ją ze swoją.
+        </p>
+        <ol>
+          <li>
+            Pod komentarzem "Własna animacja" masz zadeklarowaną tablicę, na podstawie której będziemy tworzyć animację, nie zmieniaj jej.
+          </li>
+          <li>
+            Aby animacja działała poprawnie potrzebujemy licznika, który będzie wskazywał nam na indeks "slajdu". Zadeklaruj kilka linii niżej w oznaczonym miejscu taką przykładową zmienną i na start nadaj jej wartość <b>0</b>.
+          </li>
+          <li>
+            Kilka wierszy niżej masz zadeklarowany interwał. Odpowiada on za wyświetlanie odpowiedniego elementu tablicy ze slajdami. Jako indeks tablicy podaj nazwę swojej zmiennej/licznika w miejsce placeholdera.
+          </li>
+          <li>
+            Aby slajdy zmieniały się co chwilę, to musimy za każdym razem podawać inny slajd z tablicy. Dlatego po ukazaniu każdego obrazka, będziemy zwiększać jego indeks. Interwał nie ma końca, dojdziemy zatem do momentu, w którym indeks będzie wynosił <b>4</b> lub więcej, a przecież nie ma już w tych indeksach slajdów. Dlatego musimy stworzyć dodatkowy warunek <b>if</b>, który sprawdzi, czy indeks (czyli nasza zmienna) cały czas wynosi <b>3</b> lub mniej.
+          </li>
+          <li>
+            Napisz warunek, który spełni się, gdy Twoja zmienna będzie wynosić <b>3</b> lub więcej.
+          </li>
+          <li>
+            Jeżeli warunek się sprawdzi i Twoja zmienna będzie wynosiła <b>3</bs> lub więcej nadaj jej z powrotem wartość 0 wewnątrz warunku <b>if</b>. Nie musisz używać tutaj słowa kluczowego <b>var</b>, ponieważ zmienna jest już zadeklarowana, teraz przypisujesz tylko nową wartość np: <code><b>zmienna = 0</b></code>;
+          </li>
+          <li>
+            Natomiast jeżeli zmienna (indeks) jest mniejsza, to zwiększ jej wartość, żeby interwał wyświetlił slajd na kolejnej pozycji.
+          </li>
+          <li>
+            Na koniec, po przecinku wstaw prędkość w milisekundach, z jaką będą zmieniane slajdy. Najlepiej, aby była to sekunda (1000ms).
+          </li>
+        </ol>
+      </div>
+    </section>
+    <script src="zadania.js"></script>
+  </body>
