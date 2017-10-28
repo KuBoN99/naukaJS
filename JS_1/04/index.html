@@ -1,0 +1,196 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript, zadanie 4</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  
+  <body>
+    <header class="container">
+      <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo">
+    </header>
+    <section class="section-subheader">
+      <div class="container sub-container">
+        <h1>JavaScript &ndash; pętle</h1>
+      </div>
+    </section>
+    <section class="container container-margin">
+      <h2>Wykład</h2>
+      <p class="text">
+        Do pracy nad zbiorami danych w JS służą pętle. Pozwalają one na wielokrotne wykonywanie danego kodu z podanymi różnymi wartościami. Jest niczym pracownik przydzielony do wykonywania określonych zadań. Działanie pętli jest przerywane określonym warunkiem kończącym działanie. Jej konstrukcja wygląda następująco:
+      </p>
+      <pre><code class="js">
+      for (start, warunek kończący, skok) {
+          //kod wykonywany dla każdej iteracji(skoku) pętli
+      }
+              </code></pre>
+      <p class="text">
+        Wyobraź sobie, że chcesz wypisać w liście kilka elementów z tablicy, normalnie wyglądałoby to tak:
+      </p>
+      <pre><code class="js">
+      var ourTable = ["Marcin", "Ania", "Agnieszka", "Albert", "Michał", "Basia"];
+      ourTable[0] // => "Marcin";
+      ourTable[1] // => "Ania";
+      ourTable[2] // => "Agnieszka";
+      ourTable[3] // => "Albert";
+      ourTable[4] // => "Michał";
+      ourTable[5] // => "Basia";
+  
+          </code></pre>
+      <p class="text">Z użyciem pętli wygląda to tak:</p>
+      <pre><code class="js">
+      for (var i=0; i&lt;6; i=i+1) {
+        ourTable[i] // pętla wypisze po kolei wszystkie imiona, bo za każdym razem 
+                    // zmienna <b>i</b> będzie większa niż <b>1</b>
+      }
+          </code></pre>
+      <ul>
+        <li><b>for</b> &ndash; deklaracja pętli,</li>
+        <li><b>var i = 0</b> &ndash; licznik wykonywania pętli, tu na start jest <b>0</b>,</li>
+        <li><b>i &lt; 6</b> &ndash; punkt końcowy, a więc pętla będzie się wykonywać od <b>0</b> do <b>5</b>, bo <b>i</b> ma być mniejsze niż <b>6</b>,</li>
+        <li><b>i = i + 1</b> &ndash; powiedzieliśmy pętli, że ma wykonywać sie od <b>0</b> do <b>5</b>, co <b>1</b>. To znaczy, że pętla wykona się, kiedy <b>i</b> będzie się równało 0, 1, 2, 3, 4 lub 5 (wykona
+          się 6 razy, skok co 1). Gdyby było to <b>i = i + 2</b> pętla wykonałaby się dla 0, 2 i 4 (wykona się 3 razy, skok co 2).</li>
+      </ul>
+      <p class="text">Skok zwiększa licznik o podaną wartość. Można to wytłumaczyć na przykładzie z pracownikiem. Wyobraź sobie, że dajesz komuś zadanie włożenia 10 długopisów do pudełka. Dzięki deklaracji <b>i=i+1</b> mówisz mu, żeby wkładał długopis do każdego z nich, natomiast <b>i=i+2</b> oznacza, że pracownik ma wkładać długopis do co drugiego pudełka.</p>
+      <p class="text">
+        W pętli <b>for</b> definiujemy zmienną, która będzie licznikiem pętli (start). W przypadku poniżej jest to zmienna <b>i</b>, ale to może być dowolna nazwa np. <code><b>counter, licznik, j</b></code>. Przyjęło się jednak zwykle stosować <code><b>i</b></code>.
+        Co się zatem stanie, gdy napiszemy taką pętle:
+      </p>
+      <pre><code class="js">
+      for (var i=0; i&lt;=5; i=i+1) {
+          example += i;
+      }
+              </code></pre>
+      <p class="text">
+        Licznik pętli zaczyna się na pozycji <b>0</b>. Dalej sprawdzany jest warunek, czy <code><b>i</b></code> jest mniejsze lub równe <b>5</b>, jeżeli tak, to kod jest wykonywany. Do zmiennej <code><b>example</b></code> doliczana jest zmienna <code><b>i</b></code>, która za każdym razem jest większa. Na koniec następuje skok, czyli <code><b>i</b></code> zwiększa swoją wartość o <b>1</b> (taki zabieg nazywamy iteracją i można go zapisać również w ten sposób: <code><b>i++</b></code>), a pętla wykonuje się kolejny raz, dopóki <code><b>i</b></code> nie osiągnie wartości <b>6</b>. Dla całej pętli wygląda to tak:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>i</th>
+            <th>Co zwraca warunek</th>
+            <th>Wykonana operacja</th>
+            <th>Wartość zmiennej example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td><code><b>0&lt;=5 / true</b></code></td>
+            <td>0+0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><code><b>1&lt;=5 / true</b></code></td>
+            <td>0+1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code><b>2&lt;=5 / true</b></code></td>
+            <td>1+2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><code><b>3&lt;=5 / true</b></code></td>
+            <td>3+3</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code><b>4&lt;=5 / true</b></code></td>
+            <td>6+4</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><code><b>5&lt;=5 / true</b></code></td>
+            <td>10+5</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><code><b>6&lt;=5 / false</b></code></td>
+            <td>brak</td>
+            <td>15</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text">
+        Bardzo podobnie działa pętla <code><b>while</b></code>. Różnica jest taka, że pętlę <code><b>while</b></code> wykorzystujemy, jeżeli nie wiemy, ile razy będziemy wykonywać jakieś instrukcje. Jej konstrukcja wygląda następująco:
+      </p>
+      <pre><code class="js">
+      var i = 0;                  // Zmienna do warunku
+  
+      while ( i &lt;= 5 ) {          //Wykonuj dopóki i jest mniejsze lub równe 5
+          i = Math.random()*10;   //Wylosuj liczbę od 0 do 9
+      }
+          </code></pre>
+      <p class="text">
+        Po słowie kluczowym w nawiasie podajemy warunek, kiedy pętla ma się wykonywać. W tym przypadku dopóki
+        <code><b>i</b></code> jest mniejsze lub równe <b>5</b>. Następnie w pętli wbudowana metoda javaScript <code><b>Math.random()</b></code> losuję liczbę i zapisuję ją w zmiennej <code><b>i</b></code> (która wykorzystujemy w warunku pętli). Jeżeli wartość jest mniejsza niż 5, to pętla wykonuje się jeszcze raz i losuje kolejną liczbę. Natomiast gdy wylosuje się liczba większa np. 6, to pętla się przerywa, bo nie spełni się warunek (
+        <code><b>6 &lt;= 5</b></code> zwraca <code><b>false</b></code>).
+      </p>
+    </section>
+    <section class="container-last">
+      <div class="container">
+        <p class="text"><strong>Po każdej zmianie w kodzie JS wciśnij przycisk Run u góry strony, aby zobaczyć efekt.</strong></p>
+        <h2>Zadanie 1</h2>
+        <p class="text">
+          <strong>Spójrz na kod JavaScript do zadania 1.</strong><br> Zamień zmienne <code><b>num1</b></code> i <code><b>num2</b></code> na liczby tak, aby pętla wykonała się tylko 5 razy<br> Linia pod spodem pokazuje, ile razy wykonała się pętla.
+        </p>
+        <p class="text">Pętla wykonała się:&nbsp;<span id="ex1"></span>&nbsp;razy</p>
+        <p class="text"><strong>Hint:</strong> Pamiętaj o tym, że pętle liczy się zazwyczaj od 0, używając więc np znaku "&lt;" pętla wykona się o jeden raz mniej niż liczba po znaku np:</p>
+        <pre><code class="js">
+      for(var i = 0; i <= 3; i++) {     // Pętla wykona się 4 razy, kiedy i = 0, 1, 2, 3
+        //kod do wykonania
+      }
+      
+      for(var i = 0; i < 3; i++) {      // Pętla wykona się 3 razy, kiedy i = 0, 1, 2
+        //kod do wykonania
+      }
+            </code></pre>
+        <h2>Zadanie 2</h2>
+        <p class="text">
+          <strong>Spójrz na kod JavaScript do zadania 2.</strong><br> Zamień zmienne <code><b>num1</b></code> i <code><b>num2</b></code> na liczby, tak aby odliczanie pod spodem liczyło od <b>0</b> do <b>10</b><br> Gdy już to zrobisz, spróbuj zmienić warunek i wartość startową zmiennej, tak aby odliczanie było odwrotne od <b>10</b> do <b>0</b>.
+        </p>
+        <p class="text" id="ex2"></p>
+        <h2>Zadanie 3</h2>
+        <p class="text">
+          <strong> Spojrz na kod JavaScript do zadania 3.</strong><br> W miejsce zmiennych <b>condition</b> uzupełnij pętlę tak, żeby wypisała liczby od <b>0</b> do <b>100</b>, ale każdy skok następował co <b>10</b>, czyli 0, 10, 20, 30 itd.
+        </p>
+        <p class="text" id="ex3">Odliczam:&nbsp;</p>
+        <p class="text"><strong>Hint:</strong> W razie problemów, wróć do sekcji z opisem konstrukcji <strong>for</strong>, i porównaj go z inną przykładową pętlą. Za skok pętli odpowiada ostatni warunek instrukcji.</p>
+        <h2>Zadanie 4</h2>
+        <p class="text text-margin">
+          Programista często korzysta z pętli, gdy pracuje z tablicami. <br> Spójrz na kod JavaScript do zadania 4. Znajduje się tam pętla <code><b>for</b></code>, a w niej metoda tablic <code><b>.length</b></code> zwracająca liczbę elementów tablicy.
+        </p>
+        <pre><code class="js">
+      var array = ["a ","b ",12, true];
+      array.length                      //zwraca 4
+            </code></pre>
+        <p class="text">
+          Jest to przydatne, ponieważ nie musimy ręcznie liczyć, ile elementów ma tablica i wpisywać, tej liczby do warunku. Może nie widać tego tak dokładnie przy tablicy z czterema elementami, ale gdyby było ich 500 lub więcej, różnica byłaby dużo bardziej zauważanla.<br> Przy korzystaniu z tej metody, należy jedynie pamiętać, że zwraca ona długość tablicy licząc od 1, a same indeksy są liczone od 0. Patrząc na zmienną powyżej, ostatni element tablicy jest jej czwartym elementem, ale ma indeks 3.
+        </p>
+        <p class="text">
+          <strong>Uzupełnij warunki podanej pętli tak, aby pod spodem wyświetlały się wszystkie elementy tablicy.</strong>
+        </p>
+        <p class="text" id="ex4"></p>
+        <p class="text">
+          <strong>Hint: </strong> Jeżeli nie wiesz, jak korzystać z metody <strong>length</strong>, spójrz na wzór w komentarzu do tego zadania
+        </p>
+        <h2>Zadanie 5</h2>
+        <p class="text">
+          <strong>Spójrz na kod JavaScript do zadania 5.</strong><br> Znajduje się tam pętla while, która wyświetla zmienną <strong>i</strong>. Zastąp zmienną <code><b>num1</b></code> i <code><b>num2</b></code>, tak aby wypisała co drugą liczbę od 2 do 10.
+        </p>
+        <p class="text" id="ex5">Odliczam:&nbsp;</p>
+        <p class="text">
+          <strong>Hint: </strong> Pamiętaj, że zawsze pętla powinna się zakończyć dzięki zajściu określonego warunku. Inaczej będziemy mieli do czynienia z tzw. <u>inifinite loop</u>, czyli pętla będzie wykonywała się w nieskończoność, przez co zablokuje się działanie całej przeglądarki.
+        </p>
+      </div>
+    </section>
+    <script src="zadania.js"></script>
+  </body>
