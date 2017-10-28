@@ -1,0 +1,98 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript, zadanie 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header class="container">
+        <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo">
+    </header>
+    <section class="section-subheader">
+        <div class="container sub-container">
+            <h1>JavaScript &ndash; instrukcje warunkowe</h1>
+        </div>
+    </section>
+      <section class="container container-margin">
+
+      <h2>Zadanie 1</h2>
+      <p class="text">
+        Aby program mógł działać, to musi umieć podejmować decyzję. Jak? Służą do tego tzw. instrukcje warunkowe np. <code><b>if</b></code>. Polega on na tym, że dany kawałek kodu wykona się, jeżeli <code>(<b>if</b>)</code> dany warunek się sprawdzi.<br>
+        Kod do zadania 1. w pliku javascriptowym powinien wypisywać pod spodem nagłówek z napisem "Działam".<br>
+        Mimo to nic się nie wyświetla? Dlaczego? Zmienna <code><b>bool</b></code> przyjęła wartość <code><b>false</b></code>, a powiedzieliśmy, że instrukcja <code><b>if</b></code> wykonuje się, gdy warunek podany w nawiasach się spełni, czyli zwróci wartość <code><b>true</b></code>.
+      </p>
+      <p class="text"><strong>Popraw kod tak, aby zadziałał poprawnie.</strong></p>
+      <p class="text" id="ex1">Wynik zadania 1:&nbsp;</p>
+      <h2>Zadanie 2</h2>
+      <p class="text">
+        Czasem zdarza się tak, że bez spełnienia warunku też chcemy wywołać jakąś akcję. Co wtedy?<br> Na ratunek przychodzi instrukcja <code><b>else</b></code>. Działa w ten sposób, że jeżeli warunek z <code><b>if</b></code> nie spełni się, to zawsze wykona się <code><b>else</b></code>. Jego konstrukcja wygląda tak:
+      </p>
+      <pre><code class="js">
+    if (<b>warunek</b>) {
+        //wykonaj, jeżeli warunek zwraca <b>prawdę</b>
+    }
+    else {
+        //wykonaj, jeżeli warunek zwraca <b>falsz</b>
+    }
+
+</code></pre>
+      <p class="text"><strong>Spróbuj poprawić kod z zadania 2 tak, aby wykonał się kod znajdujący się w <code>else</code></strong></p>
+      <p class="text" id="ex2">Wynik zadania 2:&nbsp;</p>
+      <h2>Zadanie 3</h2>
+      <p class="text">
+        Warunki, jakie podajemy, nie zawsze muszą być flagą <b>true</b> albo <b>false</b>. Można je zapisywać równiez jako warunki logiczne (działania&nbsp;matematyczne), oto przykład:
+      </p>
+      <pre><code class="js">
+    2 == 2           //true
+    5 &gt; 3            //true
+    3 - 5 == 12      //false
+    5 &lt; 5            //false
+      </code></pre>
+      <p class="text">
+        Pamiętaj że, znak równości zapisuję się jako "==", ponieważ pojedynczy znak "=" służy do przypisywania wartości.
+      </p>
+      <p class="text">Zajrzyj do kodu JavaScript do zadania 3. Znajduję się tam wyrażenie, które decyduje o tym, czy pora na jedzenie w zależności od poziomu głodu (zmienna <b>hungerLevel</b>). Zmienna ta będzie przyjmowała losową wartość (w zakresie od 1 do 10). Oznacza to, że za każdym uruchomieniem programu jej wartość będzie inna.<br>
+        <strong>Uzupełnij kod. Użyj operatorów logicznych tak, aby warunek spełnił się, jeżeli poziom głodu będzie większy niż <b>5</b>, a wtedy program wyświetli napis "Zjem później". W warunku użyj zmiennej zamiast samych liczb.</strong></p>
+      <p class="text"><strong>Hint: </strong>Jeżeli w zmiennej znajduję się liczba, to możemy jej użyć tak samo jak liczby.</p>
+      <pre><code class="js">
+    var zmienna = 3;
+    ... //reszta kodu
+    if(zmienna &lt; 10){}     //zwraca true, bo zmienna przechowuje wartość 3, czyli 3&lt;10
+      </code></pre>
+      <p class="text" id="hungerLevel">Mój poziom głodu to:&nbsp;</p>
+      <p class="text" id="ex3">Wynik zadania 3:&nbsp;</p>
+      <h2>Zadanie 4</h2>
+      <p class="text">
+        A jeśli chcemy w odpowiedzi na warunek mieć więcej niż dwie odpowiedzi? Można napisać warunek <b>if/else</b> kilka razy, ale byłoby to bardzo niewygodne. Tutaj z pomocą pojawia się instrukcja <b>else if</b>, która tak jak <b>if</b> przyjmuje warunek w nawiasach i wypełnia się tylko, jeżeli warunek z <b>if</b> się nie spełni. Jeżeli warunków <b>else if</b> jest więcej, to wykonują się po kolei od góry do dołu, aż któryś się spełni.
+      </p>
+      <p class="text">
+        Przykład:
+      </p>
+      <pre><code class="js">
+    if(warunek) {          // Jeżeli warunek się nie spełni, kod się nie wykona i przejdzie dalej
+      //kod do wykonania    
+    }
+    else if(warunek2) {    // Jeżeli warunek się nie spełni, kod się nie wykona i przejdzie dalej
+      //kod do wykonania     
+    }
+    else if(warunek3) {    // Jeżeli ten warunek się spełni, kod się wykona i zignoruje resztę
+      //kod do wykonania     
+    }
+    else {
+      //kod do wykonania
+    }
+      </code></pre>
+      <p class="text">
+        Spójrz na kod do zadania 4. Znajduje się tam <b>if</b>, który sprawdza podany kolor sygnalizacji świetlnej i na jego podstawie decyduje, czy można jechać dalej. Uzupełnij go warunkiem, który sprawi, że kiedy zmienna <b>color</b> będzie przechowywała wartość 'yellow' wyświetli się napis "Uważaj", a następnie zmień wartość zmiennej color na 'yellow' i sprawdź, czy wszystko działa dobrze. Jeżeli chcesz, możesz przetestować działanie <b>if</b>, wpisując inne kolory.
+      </p>
+      <p class="text" id="ex4">Czy mogę już jechać:&nbsp;</p>
+      <p class="text"><strong>Hint: </strong>Jeżeli w zmiennej znajduję się string, możemy ją porównywać z innymi stringami tak samo jak liczby:</p>
+      <pre><code class="js">
+    var zmienna = "bakłażan";
+    zmienna == "bakłażan";      //zwraca true, bo "bakłażan" == "bakłażan"
+      </code></pre>
+    </section>
+    <script src="zadania.js"></script>
+</body>
