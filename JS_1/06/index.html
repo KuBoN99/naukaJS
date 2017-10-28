@@ -1,0 +1,120 @@
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript, zadanie 6</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  
+  <body>
+    <header class="container">
+      <img class="logo" src="http://coderslab.pl/svg/logo-coderslab.svg" title="logo" alt="logo" />
+    </header>
+    <section class="section-subheader">
+      <div class="container sub-container">
+        <h1>JavaScript &ndash; funkcje</h1>
+      </div>
+    </section>
+    <section class="container container-margin">
+      <h2>Wykład</h2>
+      <p class="text">
+        Czas na kolejną dawkę wiedzy. Przedstawiamy funkcję czyli blok kodu służący do wykonywania określonego zadania. Co ważne, należy je wywołać. Zapoznaj się z przykładem, aby zrozumieć, co to znaczy.
+      </p>
+      <p class="text">
+        Zacznijmy od składni, oto przykład:
+        <pre><code class="js">
+      function name(parameter) {
+        // kod do wykonania
+      }
+          </code></pre>
+      </p>
+    <p class="text">Poznaj składniki funkcji:</p>
+    <ul>
+      <li>słowo kluczowe <code><b>function</b></code></li>
+      <li>nazwa funkcji (może być dowolna, ale zaleca się, aby składała się z czasowników np. checkName),</li>
+      <li>jednym parametrze lub wielu parametrach, zapisywanych w nawiasie (uwaga, funkcja może też nie przyjmować żadnych parametrów), </li>
+      <li>kod do wykonania zapisywany w nawiasach klamrowych.</li>
+    </ul>
+    <p class="text">
+        W parametrze możesz przekazywać m.in. dowolne słowo np. "ananas", a funkcja ma wykonać określone zadanie np. zmienić wielkość znaków, odwrócić kolejność liter czy też sprawdzić, ile razy powtarza się znak "a".<br> 
+      W naszym przykładzie przekażemy dwie zmienne liczbowe, a zadaniem funkcji będzie je pomnożyć. 
+      </p>
+      <p class="text">
+          <pre><code class="js">
+      function multiply(num1, num2) { //funkcji można podać więcej niż jeden parametr
+        return num1*num2;
+      }
+            </code></pre>
+      </p>
+      <p class="text">
+        Nasza funkcja nazywa się <b>multiply</b>. Aby ją  wywołać, należy podać jej nazwę, a następnie parametry. W miejsce <b>num1</b> i <b>num2</b> wpisujemy zatem liczby, które chcemy pomnożyć, w naszym przypadku <b>4</b> i <b>5</b>. Czas na wywołanie funkcji:
+      </p>
+      <pre><code>
+      multiply(4,5);
+          </code></pre>
+      <p class="text">
+        Co się stało? Wywołaliśmy zadeklarowaną wcześniej funkcję <b>multiply</b>, a pod parametry <b>num1</b> i <b>num2</b> podstawiliśmy dwie liczby. Wnętrze funkcji podczas takiego wywołania wygląda zatem tak: <code><b>return 4*5</b></code>, a zwracany jest wynik tego mnożenia czyli <b>20</b>. Pamiętaj, aby zawsze używać nawiasów okrągłych, nawet jeżeli funkcja nie przyjmuje żadnych parametrów, co też jest możliwe.
+      </p>
+      <h4>return</h4>
+      <p class="text">
+        Funkcje muszą zawsze coś zwracać. Gdyby tego nie robiły, wykonywały by się wewnątrz siebie, ale nic nie byłoby zauważalne na zewnątrz. Wyobraź sobie rzemieślnika pracującego w zaciszu swojego warsztatu. Jeżeli nie wyniesie
+        stamtąd efektów swojej pracy, nikt nie będzie w stanie z nich skorzystać. Do przekazywania efektu działania funkcji służy właśnie słowo kluczowe <code><b>return</b></code>. Kod w kolejnych liniach nie będzie wykonany, więc należy zapamiętać, że to słowo kluczowe ma być zawsze ostatnie.    </p>
+      <pre><code class="js">
+      function multiply(num1, num2) {
+        num1*num2;
+      }
+      
+      multiply(4, 5);
+          </code></pre>
+      <p class="text">
+        Taka funkcja nic nam nie zwróci. Nasz rzemieślnik wykona zadanie, ale wynik zachowa dla siebie.
+      </p>
+      <p class="text">
+        Bardzo wygodne jest przypisywanie wyniku funkcji do zmiennej, dzięki czemu będziemy mogli korzystać z efektu tej pracy wielokrotnie np.
+      </p>
+      <pre><code class="js">
+      var result = multiply(4, 5);
+          </code></pre>
+      <p class="text">
+        Wynik działania funkcji mamy teraz w zmiennej <b>result</b>, z której później będziemy mogli swobodnie korzystać.
+      </p>
+    </section>
+    <section class="container-last">
+      <div class="container">
+        <p class="text"><strong>Po każdej zmianie w kodzie JS wciśnij przycisk Run u góry strony, aby zobaczyć efekt.</strong></p>
+        <p class="text"><strong>W zadaniach znajdziesz kod zaczynający się od <code>document.getElementById...</code>, proszę, nie zmieniaj go.</strong></p>
+        <h2>Zadanie 1</h2>
+        <p class="text">
+          Spójrz na kod do zadania 1 w pliku JS. Znajdziesz tam funkcję wypisującą tekst. Wywołaj ją.
+        </p>
+        <p class="text" id="ex1">&nbsp;</p>
+        <p class="text"><strong>Hint:&nbsp;</strong>Funkcję wywołuje się poprzez podanie jej nazwy z nawiasami okrągłymi, bez parametrów.</p>
+        <h2>Zadanie 2</h2>
+        <p class="text">
+          Spójrz na kod do zadania 2. w pliku JS. Znajdziesz tam funkcję oraz zmienną, do której przypisany jest jej wynik. Następnie sama zmienna jest wyświetlana poniżej. Funkcja ta przyjmuje dwa parametry i zwraca wynik ich mnożenia. <strong>Popraw wywołanie funkcji tak, żeby  równanie poniżej było prawidłowe.</strong>
+        </p>
+        <p class="text" id="ex2">5 * 12 =&nbsp;</p>
+        <p class="text"><strong>Hint: </strong>W razie problemów porównaj parametry przy deklaracji funkcji oraz jej wywołaniu w zmiennej oraz przeczytaj jeszcze raz sekcję na temat parametrów funkcji.</p>
+        <h2>Zadanie 3</h2>
+        <p class="text">
+          Spójrz na kod do zadania 3. w pliku JS. Wywołaj znajdującą się tam funkcję w taki sposób, aby pod spodem pojawiło się powitanie z Twoim imieniem.
+        </p>
+        <p class="text" id="ex3"></p>
+        <p class="text"><strong>Hint:&nbsp;</strong>Wystarczy przy deklaracji funkcji zastąpić parametr <b>name</b>  wartością, która go zastąpi.</p>
+        <h2>Zadanie 4</h2>
+        <p class="text">
+          Spójrz na kod do zadania 4 w pliku JS. Znajduje się tam funkcja przeliczająca stopnie Fahrenheita na Celsjusza. Do zmiennej <b>fahrenheit</b> przypisz temperaturę, którą chcesz przeliczyć. Natomiast do zmiennej <b>result2</b> przypisz wynik tej funkcji, a w nawiasach podaj zmienną <b>fahrenheit</b>.
+        </p>
+        <p class="text" id="ex4"></p>
+        <p class="text"><strong>Hint:&nbsp;</strong>Jeżeli wszystko jest poprawnie dla np. 50&deg; fahrenheita wynik powinien dać 10&deg; Celsjusza</p>
+        <h2>Zadanie 5</h2>
+        <p class="text">
+          Czas na napisanie własnej funkcji. W pliku JS masz miejsce na napisanie własnej funkcji. Nadaj jej dowolną nazwę, ale pamiętaj o dobrych praktykach. Funkcja ma przyjmować parametr o dowolnej nazwie: twój wiek (np. 27), a zwracać rok urodzenia (np. 1990). 
+          Jak napisać kod? Od bieżącego roku należy odjąć podany parametr ( np. <code><b>return 2017 - parametr;</b></code>) i zwrócić wynik. Następnie wywołaj funkcję i zapisz jej wynik do przygotowanej już zmiennej <b>birthYear</b>.<br> Jeżeli wszystko zostało zrobione poprawnie, to rok Twojego urodzenia powinien wyświetlić się poniżej.
+        </p>
+        <p class="text" id='ex5'></p>
+        <p class="text"><strong>Hint:&nbsp;</strong>Jeżeli nie masz pewności, jak napisać funkcję, to przyjrzyj się wzorowi z części teoretycznej, a następnie podmień poszczególne części.</p>
+      </div>
+    </section>
+    <script src="zadania.js"></script>
+  </body>
